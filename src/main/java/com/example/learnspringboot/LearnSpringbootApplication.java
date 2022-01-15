@@ -2,12 +2,15 @@ package com.example.learnspringboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import java.util.Arrays;
 
 @SpringBootApplication
 public class LearnSpringbootApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LearnSpringbootApplication.class, args);
+		ConfigurableApplicationContext cxt = SpringApplication.run(LearnSpringbootApplication.class, args);
+		Arrays.stream(cxt.getBeanDefinitionNames()).forEach(System.out::println);
 	}
-
 }
