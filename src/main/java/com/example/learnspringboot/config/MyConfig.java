@@ -1,6 +1,5 @@
 package com.example.learnspringboot.config;
 
-import com.example.learnspringboot.bean.Pet;
 import com.example.learnspringboot.bean.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -18,8 +17,8 @@ public class MyConfig {
         return new User("yyc", 25);
     }
 
-    @Bean(name = "haisen")
-    public Pet createPet() {
-        return new Pet("haisen");
-    }
+    // @Bean(name = "haisen")
+    // public Pet createPet() {
+    //     return new Pet("haisen", 20.00);
+    // }
 }

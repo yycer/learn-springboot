@@ -1,0 +1,30 @@
+person001:
+  username: person001
+#  username: 'person001 \n 002' -> 不转义
+#  username: "person001 \n 002" -> 转义
+  boss: false
+  birth: 1996/08/17
+  age: 26
+  pet:
+    name: haisen
+    weight: 20.00
+  interests:
+    - reading
+    - sports
+  animal: [cat, dog]
+  score: {math: 100, english: 100, chinese: 100}
+  salaries:
+    - 30.00
+    - 25.10
+    - 100.30
+  allPets:
+    healthy:
+      - name: pet001
+        weight: 10.01
+      - name: pet002
+        weight: 20.02
+    unhealthy:
+      - name: pet003
+        weight: 30.03
+      - name: pet004
+        weight: 40.04

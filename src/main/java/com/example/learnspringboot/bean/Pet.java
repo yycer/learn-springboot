@@ -1,28 +1,13 @@
 package com.example.learnspringboot.bean;
 
+import lombok.Data;
+
 /**
  * @author Frankie
  * @since 2022-01-15 3:36 PM
  */
+@Data
 public class Pet {
     private String name;
-
-    public Pet(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "Pet{" +
-                "name='" + name + '\'' +
-                '}';
-    }
+    private Double weight;
 }
