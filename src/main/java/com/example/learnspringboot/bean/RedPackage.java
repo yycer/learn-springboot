@@ -11,14 +11,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class RedPackage {
 
-    @Bean(name = "money200")
-    public void money() {
-        System.out.println("我有200块钱");
-    }
-
     @Bean
     @ConditionalOnBean(name = {"money200"})
     public void sendRedPackage() {
         System.out.println("发了一个200块的红包");
+    }
+
+    @Bean(name = "money200")
+    public void money() {
+        System.out.println("我有200块钱");
     }
 }
