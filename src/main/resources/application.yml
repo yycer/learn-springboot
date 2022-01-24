@@ -28,3 +28,10 @@ person001:
         weight: 30.03
       - name: pet004
         weight: 40.04
+
+# Whether to enable Spring's HiddenHttpMethodFilter, the default value is false
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: false
