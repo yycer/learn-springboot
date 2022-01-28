@@ -1,3 +1,15 @@
+
+my:
+  service:
+    enables: true
+    remote-address: 192.168.1.1
+    security:
+      username: admin
+      password: 123
+      roles:
+        - USER
+        - ADMIN
+
 person001:
   username: person001
 #  username: 'person001 \n 002' -> 不转义
