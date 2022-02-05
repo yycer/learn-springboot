@@ -81,4 +81,21 @@ public class ParameterController {
         map.put("user", user.toString());
         return map.toString();
     }
+
+    @GetMapping("/complex/{id}/{username}")
+    public String testComplexParameters(@PathVariable("id") long id,
+                                        @PathVariable("username") String username,
+                                        @PathVariable Map<String, String> pathVariableMap,
+                                        @RequestParam("age") int age,
+                                        @RequestParam("city") String city,
+                                        @RequestParam Map<String, String> requestParamMap,
+                                        @RequestHeader("Host") String host,
+                                        @RequestHeader("User-Agent") String userAgent,
+                                        @RequestHeader Map<String, String> requestHeaderMap) {
+        Map<String, String> map = new HashMap<>();
+        map.putAll(pathVariableMap);
+        map.putAll(requestParamMap);
+        map.putAll(requestHeaderMap);
+        return map.toString();
+    }
 }
