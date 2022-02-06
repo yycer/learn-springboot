@@ -98,4 +98,9 @@ public class ParameterController {
         map.putAll(requestHeaderMap);
         return map.toString();
     }
+
+    @PostMapping("/v1/user")
+    public User testUser(User user) {
+        return user;
+    }
 }
