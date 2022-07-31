@@ -51,3 +51,7 @@ spring:
   web:
     resources:
       static-locations: classpath:/my-resources/
+  datasource:
+    url: jdbc:mysql://139.198.105.170:3306/yyc?useSSL=false&allowPublicKeyRetrieval=true
+    username: yyc
+    password: yyc

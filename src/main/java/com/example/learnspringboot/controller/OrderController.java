@@ -1,6 +1,11 @@
 package com.example.learnspringboot.controller;
 
+import com.example.learnspringboot.entity.Order;
+import com.example.learnspringboot.respository.OrderRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author Frankie
@@ -9,9 +14,18 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class OrderController {
 
-    @GetMapping("/order")
-    public String getOrder() {
-        return "Get Order";
+    @Autowired
+    OrderRepository orderRepository;
+
+    @GetMapping("/orders")
+    public List<Order> getOrders() {
+        return orderRepository.getAll();
+    }
+
+    @GetMapping("/orders/{id}")
+    public Order getOrderById(@PathVariable("id") long orderId) {
+        Order order = orderRepository.getOrderById(orderId);
+        return order;
     }
 
     @PostMapping("/order")
