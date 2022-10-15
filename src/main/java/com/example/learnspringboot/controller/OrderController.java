@@ -2,6 +2,7 @@ package com.example.learnspringboot.controller;
 
 import com.example.learnspringboot.entity.Order;
 import com.example.learnspringboot.respository.OrderRepository;
+import com.example.learnspringboot.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,9 @@ public class OrderController {
 
     @Autowired
     OrderRepository orderRepository;
+
+    @Autowired
+    OrderService orderService;
 
     @GetMapping("/orders")
     public List<Order> getOrders() {
@@ -46,5 +50,11 @@ public class OrderController {
     @DeleteMapping("/order")
     public String deleteOrder() {
         return "Delete Order";
+    }
+
+    @PostMapping("/orders/transaction")
+    public String postOrders(@RequestBody List<Order> orders) {
+        orderService.batchInsertOrders(orders);
+        return "Success";
     }
 }
